@@ -48,7 +48,8 @@ Point-B includes support for Infinite Scroll in Jetpack.
 * Improvement of styles
 * Adding full-width page
 = 30/05/2016 - 0.7 =
-* Addling front page with sub-page display and last 3 news from blog
+* Addling front page with 3 sub-page display and last 3 news from blog
+* Styling Blog appearance
 
 ###== Credits ==
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
