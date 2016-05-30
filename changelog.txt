@@ -1,0 +1,7 @@
+  Theme : Cassie
+Version : 1.0
+ Author : pointb
+
+April 22 2014 - 1.0
+===========================================================
+- Initial release
