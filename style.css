@@ -601,7 +601,7 @@ html[xmlns] .flexslider .slides {
 }
 .site-title a {
        font-family: Raleway, Arial, Helvetica, sans-serif;
-       color: rgba(2, 4, 18, 0.90);
+       color: rgba(7, 15, 75, 0.8);
        font-weight: 600;
        line-height: 1.4;
        text-transform: uppercase;
@@ -613,7 +613,7 @@ html[xmlns] .flexslider .slides {
 	text-decoration: none;
 }
 .site-description {
-	color: #beb9b4;
+	color: rgba(7, 15, 75, 0.65);
 	font-size: 16px;
 	font-weight: 300;
 	font-family: Raleway, Arial, Helvetica, sans-serif;
@@ -1361,7 +1361,7 @@ a#cancel-comment-reply-link:before {
 .site-extra {
 	font-size: 14px;
 	line-height: 1.6;
-	background: rgba(210, 218, 242, 0.25);
+	background: rgba(214,217,228,0.7);
 }
 .site-extra .container {
 	padding-top: 40px;
@@ -1490,32 +1490,47 @@ a#cancel-comment-reply-link:before {
    ========================================================================== */
 /* --- Call-to-action --- */
 .call-to-action {
-	 -moz-border-radius: 5px;
-	 -webkit-border-radius: 5px;
-	 border-radius: 5px;
 	 -moz-box-sizing: border-box;
 	 -webkit-box-sizing: border-box;
 	 box-sizing: border-box;
 	 -moz-appearance: none;
 	 -webkit-appearance: none;
-	 background: #ec610d;
-	 color: #fff;
+	 background: rgba(7, 15, 75, 0.65);
 	 display: inline-block;
-	 padding: 1rem;
 	 text-align: center;
 	 text-decoration: none;
 	 text-transform: uppercase;
-	font-size: 14px;
-	font-weight: bold;
+	 margin-top: 4px;
 }
 .call-to-action a {
-	color: #FFFFFF;
-	font-size: 14px;
+	padding: 12px 15px;
+	display: inline-block;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: Raleway, Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
-	font-weight: bold;
+	text-decoration: none;
+	letter-spacing: 1px;
+	line-height: 1
+}
+.call-to-action a:active,
+.call-to-action a:visited;
+.call-to-action a:focus {
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.call-to-action i {
+	color: #FFFFFF;
+	font-size: 24px;
+	text-transform: uppercase;
+	font-weight:normal;
+	padding-right: 5px;
 }
 .call-to-action:hover {
-	background: #ec610d;
+	background: rgba(2, 4, 18, 0.90);
 	color: #FFFFFF;
-	text-decoration: underline;
+	text-decoration: none;
 }
