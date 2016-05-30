@@ -26,14 +26,7 @@ get_header(); ?>
 	while($query->have_posts()): $query->the_post(); global $post;
 	?>
 	<div class="col-xs-12 col-md-4 col-sm-4 content-area">
-		<h3><center><?php the_title(); ?></center></h3
-			<?php
-			// Check if the post has a Post Thumbnail assigned to it.
-			if ( has_post_thumbnail() ) {
-				the_post_thumbnail();
-			}
-			?>
-
+		<h3><center><?php the_title(); ?></center></h3>
 		<?php the_content(); ?>
 	</div>
 	<?php endwhile; ?>
@@ -47,7 +40,13 @@ get_header(); ?>
 	while($query->have_posts()): $query->the_post(); global $post;
 	?>
 	<div class="col-xs-12 col-md-4 col-sm-4 content-area">
-		<h3><?php the_title(); ?></h3>
+		<h3><div class="home-actu-title"><?php the_title(); ?></div></h3>
+		<?php
+		// Check if the post has a Post Thumbnail assigned to it.
+		if ( has_post_thumbnail() ) {
+			the_post_thumbnail( 'medium' );
+		}
+		?>
 		<?php the_excerpt(); ?>
 	</div>
 	<?php endwhile; ?>

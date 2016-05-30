@@ -71,7 +71,8 @@ a:visited {
 }
 .content-area a {
 	color: rgba(2, 4, 18, 0.90);
-	text-decoration: underline;
+	font-family: Raleway, Arial, Helvetica, sans-serif;
+	font-weight: 500;
 }
 
 /* Forms
@@ -96,6 +97,7 @@ input[type="color"],
 	height: 45px;
 	padding: 6px 15px;
 	border-color: rgba(210, 218, 242, 0.25);
+	background-color: rgba(210, 218, 242, 0.5);
 	border-width: 2px;
 	-webkit-box-shadow: none;
 	   -moz-box-shadow: none;
@@ -549,6 +551,7 @@ html[xmlns] .flexslider .slides {
 .search-form .fa-search {
 	font-size: 18px;
 	line-height: 1;
+	color: #FFFFFF;
 }
 
 /* Layout
@@ -805,7 +808,7 @@ html[xmlns] .flexslider .slides {
 	font-weight: 300;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	border-bottom: 2px solid rgb(240, 241, 248);
+	border-bottom: 2px solid rgba(7, 15, 75, 0.3);
 }
 .entry-cats .cat-links {
 	display: block;
@@ -813,7 +816,7 @@ html[xmlns] .flexslider .slides {
 }
 .entry-cats a {
 	padding: 0 15px;
-	color: rgba(7, 15, 75, 0.2);
+	color: rgba(7, 15, 75, 0.65);
 	background: #fff;
 }
 .entry-cats a:hover,
@@ -999,7 +1002,7 @@ html[xmlns] .flexslider .slides {
 /* Single post navigation */
 .site-main .post-navigation {
 	margin: 0 0 40px;
-	background: rgba(210, 218, 242, 0.25);
+	background: rgba(210, 218, 242, 0.5);
 }
 .site-main .post-navigation a {
 	padding: 0 30px;
@@ -1030,7 +1033,9 @@ html[xmlns] .flexslider .slides {
 	letter-spacing: 2px;
 	line-height: 1.2;
 }
-
+.meta-nav i {
+	font-size: 16px;
+}
 /* Comments navigation */
 .site-main .comment-navigation {
 	margin-bottom: 30px;
@@ -1147,6 +1152,7 @@ a#cancel-comment-reply-link:before {
 }
 .comment-form-comment textarea.form-control {
 	min-height: 150px;
+	background-color: rgba(210, 218, 242, 0.5);
 }
 .no-comments,
 .logged-in-as,
@@ -1386,17 +1392,27 @@ a#cancel-comment-reply-link:before {
 	color: rgba(7, 15, 75, 0.2);
 }
 
-/*
+/* ==========================================================================
   Homepage
-	*/
+   ========================================================================== */
 .home-theme {
 	margin-bottom: 14px;
 	font-size: 20px;
 	font-weight: 300;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	border-bottom: 2px solid rgb(240, 241, 248);
+	border-bottom: 2px solid rgba(7, 15, 75, 0.31);
 }
+
+.fa {
+	color: rgba(7, 15, 75, 0.65);
+	font-size: 120px;
+}
+
+.home-actu-title {
+	height: 60px;
+}
+
 
 /* ==========================================================================
    Footer
