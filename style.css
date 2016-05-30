@@ -645,7 +645,7 @@ html[xmlns] .flexslider .slides {
 }
 .main-menu .menu-toggle,
 .main-menu .menu-bar ul li a {
-	color: #64534e;
+	color: rgba(7, 15, 75, 0.65);
 }
 .main-menu .menu-bar ul li > a:hover,
 .main-menu .menu-bar ul li:hover > a,
@@ -1368,9 +1368,11 @@ a#cancel-comment-reply-link:before {
 	padding-bottom: 10px;
 }
 .site-extra a {
+	color: rgba(7, 15, 75, 0.7);
 }
 .site-extra a:hover,
-.site-extra a:focus {
+.site-extra a:focus
+.site-extra a:visited {
 }
 .site-extra .widget-title {
 	margin-bottom: 15px;
@@ -1378,14 +1380,25 @@ a#cancel-comment-reply-link:before {
 }
 .site-extra .widget {
 }
+.site-extra .widget ul li::before {
+	font-family: fontawesome;
+	content: "\F138";
+	display: block;
+	float: left;
+	position: relative;
+	margin: 0;
+	padding-right: 8px;
+	color: rgba(7, 15, 75, 0.4);
+	font-size: 14px;
+}
 .site-extra .widget ul li {
 	margin: 0 0 5px;
-	padding: 0;
-	background: none;
+	padding: 1px 0 1px 12px;
+	background-color: rgba(210, 218, 242, 0.3);
 	border-radius: none;
 }
 .site-extra .widget ul li a {
-	color: rgba(2, 4, 18, 0.90);
+	color: rgba(7, 15, 75, 0.65);
 }
 .site-extra .widget ul li a:hover,
 .site-extra .widget ul li a:focus {
@@ -1436,6 +1449,7 @@ a#cancel-comment-reply-link:before {
 .site-credit {
 	text-align: right;
 }
+
 
 @media only screen and (max-width: 719px) {
 	.site-footer,
