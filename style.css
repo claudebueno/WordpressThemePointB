@@ -1449,7 +1449,13 @@ a#cancel-comment-reply-link:before {
 .site-credit {
 	text-align: right;
 }
-
+.footer-contact ul {
+	padding-left: 0px;
+}
+.footer-contact li {
+	list-style-type: none;
+	padding: 0;
+}
 
 @media only screen and (max-width: 719px) {
 	.site-footer,

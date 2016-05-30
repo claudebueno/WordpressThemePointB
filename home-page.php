@@ -18,11 +18,11 @@ get_header(); ?>
 	</div>
 </div>
 
-<!-- 3 pages enfant de la page courante trié par le champs Ordre-->
+<!-- 3 pages enfant de la page courante trié par le champs Ordre -->
 <h2><div class="home-theme">Services / Compétences</div></h2>
 <div class="row">
 	<?php
-	$query = new WP_query(array('post_type'=>'page', 'post_parent'=>get_the_ID(), 'order'=> 'ASC'));
+	$query = new WP_query(array('post_type'=>'page', 'post_parent'=>get_the_ID(), 'sort_order'=> 'ASC'));
 	while($query->have_posts()): $query->the_post(); global $post;
 	?>
 	<div class="col-xs-12 col-md-4 col-sm-4 content-area">
