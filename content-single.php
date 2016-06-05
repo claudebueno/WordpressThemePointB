@@ -4,6 +4,7 @@
  *
  * @package Theme Point-B
  */
+ 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
 	<header class="entry-header">

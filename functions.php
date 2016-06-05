@@ -149,7 +149,7 @@ if ( ! function_exists( 'pointb_site_title' ) ) {
 	function pointb_site_title() {
 		// Text or image?
 		if ( ot_get_option('custom-logo') ) {
-			$logo = '<img src="'.ot_get_option('custom-logo').'" alt="'.esc_attr(get_bloginfo('name', 'display')).'" style="max-width: 100%; height: auto">';	
+			$logo = '<img src="'.ot_get_option('custom-logo').'" alt="'.esc_attr(get_bloginfo('name', 'display')).'" style="max-width: 100%; height: auto">';
 
 		} else {
 			$logo = get_bloginfo('name');

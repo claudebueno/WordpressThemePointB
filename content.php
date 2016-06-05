@@ -11,7 +11,7 @@
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta entry-cats">
 			<?php
-				$category = get_the_category(); 
+				$category = get_the_category();
 				if ( $category[0] ) {
 					echo '<span class="cat-links"><a href="'.get_category_link($category[0]->term_id ).'">'.$category[0]->cat_name.'</a></span>';
 				}

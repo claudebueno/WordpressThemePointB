@@ -1419,7 +1419,7 @@ a#cancel-comment-reply-link:before {
 
 .fa {
 	color: rgba(7, 15, 75, 0.65);
-	font-size: 120px;
+	/* font-size: 120px; */
 }
 
 .home-actu-title {

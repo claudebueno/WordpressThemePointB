@@ -1,7 +1,17 @@
-  Theme : Cassie
+Theme : Point-B
 Version : 1.0
- Author : pointb
+Author : Point-B
 
-April 22 2014 - 1.0
+20/05/2016 - 0.5
 ===========================================================
-- Initial release
+* Initial release
+
+26/05/2016 - 0.6
+===========================================================
+* Improvement of styles
+* Adding full-width page
+
+30/05/2016 - 0.7
+===========================================================
+* Addling front page with 3 sub-page display and last 3 news from blog
+* Styling Blog appearance

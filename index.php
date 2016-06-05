@@ -19,6 +19,8 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
 		<!-- .content-area --></div>
+
 		<?php get_sidebar(); ?>
 	</div>
+	
 <?php get_footer(); ?>

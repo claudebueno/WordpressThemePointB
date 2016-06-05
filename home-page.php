@@ -18,7 +18,7 @@ get_header(); ?>
 	</div>
 </div>
 
-<!-- 3 pages enfant de la page courante trié par le champs Ordre -->
+<!-- 3 pages enfants de la page courante trié par le champs Ordre -->
 <h2><div class="home-theme">Services / Compétences</div></h2>
 <div class="row">
 	<?php
