@@ -23,7 +23,7 @@
 					<!-- .site-info --></div>
 
 					<div class="col-sm-6 site-credit">
-						Thème Wordpress <a href="http://www.pointb.com/cassie">Point-B</a> réalisé par <a href="http://www.claudebueno.com/" target="_blank">Claude BUENO</a>
+						Thème Wordpress <a href="http://www.claudebueno.com/">Point-B</a> réalisé par <a href="http://www.claudebueno.com/" target="_blank">Claude BUENO</a>
 					<!-- .site-credit --></div>
 				</div>
 		</div>
