@@ -35,10 +35,7 @@ get_header(); ?>
 <!-- 3 derniers billets du blog -->
 <h2><div class="home-theme">Les dernières actualités</div></h2>
 <div class="row">
-	<?php
-	$query = new WP_query(array('post_type'=>'post','post_per_page'=>3));
-	while($query->have_posts()): $query->the_post(); global $post;
-	?>
+	<?php query_posts('showposts=3'); while (have_posts()) : the_post(); ?>
 	<div class="col-xs-12 col-md-4 col-sm-4 content-area">
 		<h3><div class="home-actu-title"><?php the_title(); ?></div></h3>
 		<?php
