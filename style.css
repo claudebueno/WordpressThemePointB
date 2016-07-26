@@ -1535,7 +1535,7 @@ a#cancel-comment-reply-link:before {
 	line-height: 1
 }
 .call-to-action a:active,
-.call-to-action a:visited;
+.call-to-action a:visited,
 .call-to-action a:focus {
 	color: #FFFFFF;
 	font-size: 12px;
@@ -1581,7 +1581,7 @@ a#cancel-comment-reply-link:before {
 	line-height: 1
 }
 .call-to-action-fade a:active,
-.call-to-action-fade a:visited;
+.call-to-action-fade a:visited,
 .call-to-action-fade a:focus {
 	color: #FFFFFF;
 	font-size: 12px;
