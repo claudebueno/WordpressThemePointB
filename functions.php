@@ -1,218 +1,207 @@
 <?php
+
 /**
- * nuThemes functions and definitions
+* nuThemes functions and definitions
  *
  * @package Theme Point-B
  */
 
 /*-----------------------------------------------------------------------------------*/
+
 /*  OptionTree admin panel integration.
-/* ----------------------------------------------------------------------------------*/
+* ----------------------------------------------------------------------------------*/
 add_filter( 'ot_show_pages', '__return_false' );
 add_filter( 'ot_show_new_layout', '__return_false' );
 add_filter( 'ot_theme_mode', '__return_true' );
 load_template( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
 
-
 /*-----------------------------------------------------------------------------------*/
+
 /*  Set the content width based on the theme's design and stylesheet.
-/* ----------------------------------------------------------------------------------*/
+* ----------------------------------------------------------------------------------*/
 if ( ! isset( $content_width ) )
-	$content_width = 750; /* pixels */
+	$content_width = 750;
+
+/* pixels */
 
 /* Adjust $content_width it depending on the temaplte used. -----------------*/
 function pointb_content_width() {
 	global $content_width;
-
 	if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'full-width-page.php' ) )
-		$content_width = 1140;
+			$content_width = 1140;
 }
 add_action( 'template_redirect', 'pointb_content_width' );
 
-
 /*-----------------------------------------------------------------------------------*/
+
 /*  Sets up theme defaults and registers support for various WordPress features.
-/* ----------------------------------------------------------------------------------*/
+* ----------------------------------------------------------------------------------*/
 if ( ! function_exists( 'pointb_setup' ) ) :
 function pointb_setup() {
-
+	
 	/* Make theme available for translation. ------------------------------------*/
-	// load_theme_textdomain( 'pointb', get_template_directory() . '/languages' );
-
+	// 	load_theme_textdomain( 'pointb', get_template_directory() . '/languages' );
+	
 	/* Add default posts and comments RSS feed links to head. -------------------*/
 	add_theme_support( 'automatic-feed-links' );
-
+	
 	/* Enable support for Post Thumbnails on posts and pages. -------------------*/
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'thumb-medium', 450, 320, true );
-
+	
 	/* This theme uses wp_nav_menu() in one location. ---------------------------*/
 	register_nav_menus( array(
-		'top' => __( 'Top Menu', 'pointb' ),
-		'main' => __( 'Main Menu', 'pointb' ),
-	) );
+			'top' => __( 'Top Menu', 'pointb' ),
+			'main' => __( 'Main Menu', 'pointb' ),
+		) );
 }
 endif;
 add_action( 'after_setup_theme', 'pointb_setup' );
 
-
 /*-----------------------------------------------------------------------------------*/
+
 /*  Register widgetized area and update sidebar with default widgets.
-/* ----------------------------------------------------------------------------------*/
+* ----------------------------------------------------------------------------------*/
 function pointb_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'pointb' ),
-		'id'            => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+			'name'          => __( 'Sidebar', 'pointb' ),
+			'id'            => 'sidebar-1',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
 	register_sidebar( array(
-		'name'          => __( 'Footer #1', 'pointb' ),
-		'id'            => 'sidebar-2',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+			'name'          => __( 'Footer #1', 'pointb' ),
+			'id'            => 'sidebar-2',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
 	register_sidebar( array(
-		'name'          => __( 'Footer #2', 'pointb' ),
-		'id'            => 'sidebar-3',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+			'name'          => __( 'Footer #2', 'pointb' ),
+			'id'            => 'sidebar-3',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
 	register_sidebar( array(
-		'name'          => __( 'Footer #3', 'pointb' ),
-		'id'            => 'sidebar-4',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+			'name'          => __( 'Footer #3', 'pointb' ),
+			'id'            => 'sidebar-4',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
 	register_sidebar( array(
-		'name'          => __( 'Footer #4', 'pointb' ),
-		'id'            => 'sidebar-5',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
+			'name'          => __( 'Footer #4', 'pointb' ),
+			'id'            => 'sidebar-5',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
 }
 add_action( 'widgets_init', 'pointb_widgets_init' );
 
-
 /*-----------------------------------------------------------------------------------*/
+
 /*  Count the number of footer sidebars to enable dynamic classes for the footer.
-/* ----------------------------------------------------------------------------------*/
+* ----------------------------------------------------------------------------------*/
 function pointb_extra_col_class() {
 	$count = 0;
-
 	if ( is_active_sidebar( 'sidebar-2' ) )
-		$count++;
-
+			$count++;
 	if ( is_active_sidebar( 'sidebar-3' ) )
-		$count++;
-
+			$count++;
 	if ( is_active_sidebar( 'sidebar-4' ) )
-		$count++;
-
+			$count++;
 	if ( is_active_sidebar( 'sidebar-5' ) )
-		$count++;
-
+			$count++;
 	$class = '';
-
 	switch ( $count ) {
 		case '1':
-			$class = 'col-sm-12 widget-area';
-			break;
+					$class = 'col-sm-12 widget-area';
+		break;
 		case '2':
-			$class = 'col-sm-6 widget-area';
-			break;
+					$class = 'col-sm-6 widget-area';
+		break;
 		case '3':
-			$class = 'col-sm-4 widget-area';
-			break;
+					$class = 'col-sm-4 widget-area';
+		break;
 		case '4':
-			$class = 'col-sm-3 widget-area';
-			break;
+					$class = 'col-sm-3 widget-area';
+		break;
 	}
-
 	if ( $class )
-		echo 'class="' . $class . '"';
+			echo 'class="' . $class . '"';
 }
 
 /*  Site title/logo
-/* ------------------------------------ */
+* ------------------------------------ */
 if ( ! function_exists( 'pointb_site_title' ) ) {
 	function pointb_site_title() {
-		// Text or image?
-		if ( ot_get_option('custom-logo') ) {
+		// 		Text or image?
+				if ( ot_get_option('custom-logo') ) {
 			$logo = '<img src="'.ot_get_option('custom-logo').'" alt="'.esc_attr(get_bloginfo('name', 'display')).'" style="max-width: 100%; height: auto">';
-
-		} else {
+		}
+		else {
 			$logo = get_bloginfo('name');
 		}
-
 		$link = '<a href="'.esc_url(home_url('/')).'" rel="home">'.$logo.'</a>';
-
 		if ( is_front_page() || is_home() ) {
 			$sitename = '<h1 class="site-title">'.$link.'</h1>'."\n";
-		} else {
+		}
+		else {
 			$sitename = '<div class="site-title">'.$link.'</div>'."\n";
 		}
-
 		return $sitename;
 	}
 }
 
 /*-----------------------------------------------------------------------------------*/
+
 /*  Returns the Google font stylesheet URL, if available.
-/* ----------------------------------------------------------------------------------*/
+* ----------------------------------------------------------------------------------*/
 function pointb_fonts_url() {
 	$fonts_url = '';
-
+	
 	/* Raleway. -------------------------------------------------------------------*/
 	$raleway = _x( 'on', 'Raleway font: on or off', 'pointb' );
-
+	
 	/* Noto Serif. ----------------------------------------------------------------*/
 	$noto_serif = _x( 'on', 'Noto Serif font: on or off', 'pointb' );
-
 	if ( 'off' !== $raleway || 'off' !== $noto_serif ) {
 		$font_families = array();
-
 		if ( 'off' !== $raleway )
-			$font_families[] = 'Raleway:400,500,700,900';
-
+					$font_families[] = 'Raleway:400,500,700,900';
 		if ( 'off' !== $noto_serif )
-			$font_families[] = 'Noto Serif:400,700,400italic,700italic';
-
+					$font_families[] = 'Noto Serif:400,700,400italic,700italic';
 		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
+					'family' => urlencode( implode( '|', $font_families ) ),
+					'subset' => urlencode( 'latin,latin-ext' ),
+				);
 		$fonts_url = add_query_arg( $query_args, "//fonts.googleapis.com/css" );
 	}
-
 	return $fonts_url;
 }
 
 /*-----------------------------------------------------------------------------------*/
+
 /*  Enqueue scripts and styles
-/* ----------------------------------------------------------------------------------*/
+* ----------------------------------------------------------------------------------*/
 
 /* Enqueue scripts. ---------------------------------------------------------*/
 function pointb_scripts() {
 	wp_enqueue_script( 'dropkick', get_template_directory_uri() . '/js/jquery.dropkick.min.js', array( 'jquery' ), '', false );
 	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/jquery.flexslider.min.js', array( 'jquery' ), '', false );
 	wp_enqueue_script( 'pointb-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-		wp_enqueue_script( 'comment-reply' );
+			wp_enqueue_script( 'comment-reply' );
 }
 add_action( 'wp_enqueue_scripts', 'pointb_scripts' );
-
 
 /* Enqueue styles. ----------------------------------------------------------*/
 function pointb_styles() {
@@ -223,17 +212,16 @@ function pointb_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'pointb_styles' );
 
-
 /*-----------------------------------------------------------------------------------*/
+
 /*  Actions
-/* ----------------------------------------------------------------------------------*/
+* ----------------------------------------------------------------------------------*/
 
 /* Script for no-js / js class. ---------------------------------------------*/
 function pointb_html_js_class() {
 	echo '<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>'. "\n";
 }
 add_action( 'wp_head', 'pointb_html_js_class', 1 );
-
 
 /* IE js header. ------------------------------------------------------------*/
 function pointb_ie_js_header() {
@@ -244,7 +232,6 @@ function pointb_ie_js_header() {
 }
 add_action( 'wp_head', 'pointb_ie_js_header' );
 
-
 /* IE js footer. ------------------------------------------------------------*/
 function pointb_ie_js_footer() {
 	echo '<!--[if lt IE 9]>'. "\n";
@@ -253,10 +240,10 @@ function pointb_ie_js_footer() {
 }
 add_action( 'wp_footer', 'pointb_ie_js_footer', 20 );
 
-
 /*-----------------------------------------------------------------------------------*/
+
 /*  Filters
-/* ----------------------------------------------------------------------------------*/
+* ----------------------------------------------------------------------------------*/
 
 /* Show a home link. --------------------------------------------------------*/
 function pointb_page_menu_args( $args ) {
@@ -266,16 +253,13 @@ function pointb_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'pointb_page_menu_args' );
 
-
 /* Adds custom classes to the array of body classes. ------------------------*/
 function pointb_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() )
-		$classes[] = 'group-blog';
-
-	//  Browser detection
-	global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
-
+	// 	Adds a class of group-blog to blogs with more than 1 published author.
+		if ( is_multi_author() )
+			$classes[] = 'group-blog';
+	// 	Browser detection
+		global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_iphone;
 	if ( $is_lynx ) $classes[] = 'lynx';
 	elseif ( $is_gecko ) $classes[] = 'gecko';
 	elseif ( $is_opera ) $classes[] = 'opera';
@@ -288,47 +272,43 @@ function pointb_body_classes( $classes ) {
 		if ( $browser == "MSIE 7.0" ) {
 			$classes[] = 'ie7';
 			$classes[] = 'ie';
-		} elseif ( $browser == "MSIE 6.0" ) {
+		}
+		elseif ( $browser == "MSIE 6.0" ) {
 			$classes[] = 'ie6';
 			$classes[] = 'ie';
-		} elseif ( $browser == "MSIE 8.0" ) {
+		}
+		elseif ( $browser == "MSIE 8.0" ) {
 			$classes[] = 'ie8';
 			$classes[] = 'ie';
-		} elseif ( $browser == "MSIE 9.0" ) {
+		}
+		elseif ( $browser == "MSIE 9.0" ) {
 			$classes[] = 'ie9';
 			$classes[] = 'ie';
-		} else {
+		}
+		else {
 			$classes[] = 'ie';
 		}
 	}
 	else $classes[] = 'unknown';
-
 	if( $is_iphone ) $classes[] = 'iphone';
-
 	return $classes;
 }
 add_filter( 'body_class', 'pointb_body_classes' );
 
-
 /* Filters wp_title to print a neat <title> tag. ----------------------------*/
 function pointb_wp_title( $title, $sep ) {
 	global $page, $paged;
-
 	if ( is_feed() )
-		return $title;
-
-	// Add the blog name
-	$title .= get_bloginfo( 'name' );
-
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
+			return $title;
+	// 	Add the blog name
+		$title .= get_bloginfo( 'name' );
+	// 	Add the blog description for the home/front page.
+		$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title .= " $sep $site_description";
-
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $sep " . sprintf( __( 'Page %s', 'pointb' ), max( $paged, $page ) );
-
+			$title .= " $sep $site_description";
+	// 	Add a page number if necessary:
+		if ( $paged >= 2 || $page >= 2 )
+			$title .= " $sep " . sprintf( __( 'Page %s', 'pointb' ), max( $paged, $page ) );
 	return $title;
 }
 add_filter( 'wp_title', 'pointb_wp_title', 10, 2 );
@@ -347,7 +327,6 @@ function pointb_custom_excerpt( $output ) {
 }
 add_filter( 'get_the_excerpt', 'pointb_custom_excerpt' );
 
-
 /* Replaces "[...]" with an ellipsis ----------------------------------------*/
 function pointb_auto_excerpt_more( $output ) {
 	$output = '';
@@ -356,131 +335,117 @@ function pointb_auto_excerpt_more( $output ) {
 }
 add_filter( 'excerpt_more', 'pointb_auto_excerpt_more' );
 
-
 /* Sets the post excerpt length to maximum 40 words. ------------------------*/
 function pointb_excerpt_length( $length ) {
 	return 40;
 }
 add_filter( 'excerpt_length', 'pointb_excerpt_length' );
 
-
 /* Add shortcode support to text widget. ------------------------------------*/
 add_filter( 'widget_text', 'do_shortcode' );
-
 
 /* Add responsive container to embeds. --------------------------------------*/
 function pointb_embed_html( $html ) {
 	return '<div class="video-container">' . $html . '</div>';
 }
 add_filter( 'embed_oembed_html', 'pointb_embed_html', 10, 3 );
-add_filter( 'video_embed_html', 'pointb_embed_html' ); // Jetpack
-
+add_filter( 'video_embed_html', 'pointb_embed_html' );
+// Jetpack
 
 /* Upscale cropped thumbnails. -----------------------------------------------*/
 function pointb_thumbnail_upscale( $default, $orig_w, $orig_h, $new_w, $new_h, $crop ){
-	if ( !$crop ) return null; // let the wordpress default function handle this
-
-	$aspect_ratio = $orig_w / $orig_h;
+	if ( !$crop ) return null;
+	// 	let the wordpress default function handle this
+		$aspect_ratio = $orig_w / $orig_h;
 	$size_ratio = max($new_w / $orig_w, $new_h / $orig_h);
-
 	$crop_w = round($new_w / $size_ratio);
 	$crop_h = round($new_h / $size_ratio);
-
 	$s_x = floor( ($orig_w - $crop_w) / 2 );
 	$s_y = floor( ($orig_h - $crop_h) / 2 );
-
 	return array( 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h );
 }
 add_filter( 'image_resize_dimensions', 'pointb_thumbnail_upscale', 10, 6 );
 
-
 /* Add wmode transparent to media embeds. ------------------------------------*/
 function pointb_embed_wmode_transparent( $html, $url, $attr ) {
 	if ( strpos( $html, "<embed src=" ) !== false )
-	   { return str_replace('</param><embed', '</param><param name="wmode" value="opaque"></param><embed wmode="opaque" ', $html); }
+		   {
+		return str_replace('</param><embed', '</param><param name="wmode" value="opaque"></param><embed wmode="opaque" ', $html);
+	}
 	elseif ( strpos ( $html, 'feature=oembed' ) !== false )
-	   { return str_replace( 'feature=oembed', 'feature=oembed&wmode=opaque', $html ); }
+		   {
+		return str_replace( 'feature=oembed', 'feature=oembed&wmode=opaque', $html );
+	}
 	else
-	   { return $html; }
+		   {
+		return $html;
+	}
 }
 add_filter( 'embed_oembed_html', 'pointb_embed_wmode_transparent', 10, 3 );
-
 
 /* Filter post_gallery to display gallery as slideshow. ----------------------*/
 function pointb_post_gallery( $output, $attr) {
 	global $post, $wp_locale;
-
 	static $instance = 0;
 	$instance++;
-
 	if ( isset( $attr['orderby'] ) ) {
 		$attr['orderby'] = sanitize_sql_orderby( $attr['orderby'] );
 		if ( !$attr['orderby'] )
-			unset( $attr['orderby'] );
+					unset( $attr['orderby'] );
 	}
-
-	// exception for Jetpack galleries
-	if ( isset( $attr['type'] ) ) {
+	// 	exception for Jetpack galleries
+		if ( isset( $attr['type'] ) ) {
 		return;
 	}
-
 	extract(shortcode_atts(array(
-		'order'      => 'ASC',
-		'orderby'    => 'menu_order ID',
-		'id'         => $post->ID,
-		'itemtag'    => 'li',
-		'icontag'    => 'div',
-		'captiontag' => 'div',
-		'columns'    => 3,
-		'size'       => array(650,350),
-		'include'    => '',
-		'exclude'    => ''
-	), $attr));
-
+			'order'      => 'ASC',
+			'orderby'    => 'menu_order ID',
+			'id'         => $post->ID,
+			'itemtag'    => 'li',
+			'icontag'    => 'div',
+			'captiontag' => 'div',
+			'columns'    => 3,
+			'size'       => array(650,350),
+			'include'    => '',
+			'exclude'    => ''
+		), $attr));
 	$id = intval($id);
 	if ( 'RAND' == $order )
-		$orderby = 'none';
-
+			$orderby = 'none';
 	if ( !empty($include) ) {
 		$include = preg_replace( '/[^0-9,]+/', '', $include );
 		$_attachments = get_posts( array('include' => $include, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
-
 		$attachments = array();
 		foreach ( $_attachments as $key => $val ) {
 			$attachments[$val->ID] = $_attachments[$key];
 		}
-	} elseif ( !empty($exclude) ) {
+	}
+	elseif ( !empty($exclude) ) {
 		$exclude = preg_replace( '/[^0-9,]+/', '', $exclude );
 		$attachments = get_children( array('post_parent' => $id, 'exclude' => $exclude, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
-	} else {
+	}
+	else {
 		$attachments = get_children( array('post_parent' => $id, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => $order, 'orderby' => $orderby) );
 	}
-
 	if ( empty($attachments) )
-		return '';
-
+			return '';
 	if ( is_feed() ) {
 		$output = "\n";
 		foreach ( $attachments as $att_id => $attachment )
-			$output .= wp_get_attachment_link($att_id, $size, true) . "\n";
+					$output .= wp_get_attachment_link($att_id, $size, true) . "\n";
 		return $output;
 	}
-
 	$itemtag = tag_escape($itemtag);
 	$selector = "slider-{$instance}";
 	$captiontag = tag_escape($captiontag);
-
 	$output .= "<div id='{$selector}' class='flexslider slider-{$id}'>";
-
 	$i = 0;
 	$output .= "<ul class='slides'>";
 	foreach ( $attachments as $id => $attachment ) {
 		$itemclass = ($i==0) ? 'item active' : 'item';
 		$link = wp_get_attachment_link($id, $size, true, false);
-
 		$output .= "<{$itemtag} class='{$itemclass}'>";
 		$output .= "$link";
-
 		if ( $captiontag && trim($attachment->post_excerpt) ) {
 			$output .= "
 				<{$captiontag} class='flex-caption'>
@@ -491,16 +456,13 @@ function pointb_post_gallery( $output, $attr) {
 		$i++;
 	}
 	$output .= "</ul>";
-
 	$output .= "</div>";
 	return $output;
 }
 add_filter( 'post_gallery', 'pointb_post_gallery', 10, 2 );
 
-
 /* Remove gallery inline styling. --------------------------------------------*/
 add_filter( 'use_default_gallery_style', '__return_false' );
-
 
 /* Add custom class to comment avatar. ---------------------------------------*/
 function pointb_avatar_class($class) {
@@ -509,10 +471,10 @@ function pointb_avatar_class($class) {
 }
 add_filter( 'get_avatar', 'pointb_avatar_class' );
 
-
 /*-----------------------------------------------------------------------------------*/
+
 /*  Includes
-/* ----------------------------------------------------------------------------------*/
+* ----------------------------------------------------------------------------------*/
 define('pointb_PATH', get_template_directory() );
 
 /* Customizer support. ------------------------------------------------------*/
@@ -524,9 +486,9 @@ require pointb_PATH . '/inc/template-tags.php';
 /* Theme Options. -----------------------------------------------------------*/
 require pointb_PATH . '/inc/theme-options.php';
 
-
 /* supprimer les notifications de thèmes */
 remove_action( 'load-update-core.php', 'wp_update_themes' );
 add_filter( 'pre_site_transient_update_themes', create_function( '$a', "return null;" ) );
+
 /* Masquer les erreurs de connexion */
 add_filter('login_errors',create_function('$a', "return null;"));
