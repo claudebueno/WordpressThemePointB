@@ -16,7 +16,6 @@ Tags: blue, white, light, two-columns, right-sidebar, flexible-width, featured-i
    General
    ========================================================================== */
 
-@import url(http://fonts.googleapis.com/css?family=Handlee);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
 body {
@@ -589,10 +588,6 @@ html[xmlns] .flexslider .slides {
 	}
 .site-title {
 	margin: 0;
-	font-weight: 300;
-	font-family: Handlee, Arial, Helvetica, sans-serif;
-	letter-spacing: 2px;
-	line-height: 1;
 	text-shadow: 1px 2px 0px #F7F7EF, 4px 4px 0px #D8D8D3;
 }
 .site-title img {
